@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Bitholic Management Site</title>
+  <link href="/main.css?<%=global.cache%>" rel="stylesheet">
+  <link rel="shortcut icon" href="favicon.ico">
+</head>
+<body>
+  <nav class="navbar navbar-expand-sm navbar-dark bg-dark">
+    <a class="navbar-brand" href="#">BMS</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExample03" aria-controls="navbarsExample03" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarsExample03">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item" id="menu1">
+          <a class="nav-link" href="/qa/list">일대일 문의 </a>
+        </li>
+        <li class="nav-item"  id="menu2">
+          <a class="nav-link" href="/secondAuth/list">2차 인증</a>
+        </li>
+        <%if(ctxs.session.grade === 'S'){%>
+        <li class="nav-item"  id="menu3">
+            <a class="nav-link" href="/admin/list">관리자</a>
+        </li>
+        <%}%>
+      </ul>
+      <a class="navbar-brand" href="#"><%=ctxs.session.name%></a>
+      <form class="form-inline my-2 my-lg-0" action="/logout" method="post">
+        <button class="btn btn-outline-success my-2 my-sm-0" type="submit">로그아웃</button>
+      </form>
+    </div>
+  </nav>
+
+  <div class="container-fluid">
+    
+

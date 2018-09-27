@@ -1,0 +1,26 @@
+#node_modules
+
+# Logs
+logs
+*.log
+npm-debug.log*
+
+# Runtime data
+pids
+*.pid
+*.seed
+
+# Coverage directory used by tools like istanbul
+coverage
+
+# node-waf configuration
+.lock-wscript
+
+# Optional npm cache directory
+.npm
+.cache
+
+# Optional REPL history
+.node_repl_history
+.node*
+

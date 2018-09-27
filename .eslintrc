@@ -1,0 +1,17 @@
+{
+  "extends": "airbnb",
+  "env": {
+  "browser": true,
+  "node": true
+  },  
+  "rules": {
+    "semi": [
+      "error",
+      "never"
+    ],
+    "linebreak-style": 0,
+    "no-await-in-loop": 0,
+    "no-nested-ternary": [ 0 ],
+    "no-restricted-syntax": [0, "ForInStatement", "ForOfStatement"]
+  }
+}

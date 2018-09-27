@@ -1,0 +1,115 @@
+<%- include('../header'); -%>
+<div class="row">
+  <div class="col-md-12" style="padding: 0;">
+    <div class="alert alert-dark" role="alert" style="width:100%;">
+      2차 인증 / 상세
+    </div>
+  </div>
+
+  <div class="col-md-12" style="margin: 1em 1em 0 0;">
+    <div class="card">
+      <div class="card-header bg-warning">
+        <%=data.mb_name%> 님의 현재 <strong> LEVEL <%=data.mb_level%> </strong>
+      </div>
+      <div class="card-body">
+        <form>
+          <div class="form-row">
+            <div class="form-group col-md-2">
+              <label for="txtmbNo">회원번호</label>
+              <input type="text" class="form-control" id="txtmbNo" value="<%=data.mb_no%>" readonly>
+            </div>
+            <div class="form-group col-md-5">
+              <label for="txt1">이름</label>
+              <input type="text" class="form-control" id="txt1" value="<%=data.mb_name%>" readonly>
+            </div>
+            <div class="form-group col-md-5">
+              <label for="txt1">이메일</label>
+              <input type="text" class="form-control" id="txt1" value="<%=data.mb_id%>" readonly>
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="form-group col-md-5">
+              <label for="txt1">여권번호</label>
+              <input type="text" class="form-control" id="txt1" value="<%=data.mb_passport_id%>" readonly>
+            </div>
+            <div class="form-group col-md-2">
+              <label for="txt1">생년월일</label>
+              <input type="text" class="form-control" id="txt1" value="<%=data.mb_birth%>" readonly>
+            </div>
+            <div class="form-group col-md-5">
+              <label for="txt1">전화번호</label>
+              <input type="text" class="form-control" id="txt1" value="<%=data.mb_phone%>" readonly>
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="form-group col-md-4">
+              <label for="txt1">ZIP</label>
+              <input type="text" class="form-control" id="txt1" value="<%=data.mb_zipcode%>" readonly>
+            </div>
+            <div class="form-group col-md-4">
+              <label for="txt1">도시</label>
+              <input type="text" class="form-control" id="txt1" value="<%=data.mb_city%>" readonly>
+            </div>
+            <div class="form-group col-md-4">
+              <label for="txt1">주</label>
+              <input type="text" class="form-control" id="txt1" value="<%=data.mb_state%>" readonly>
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="txt1">주소</label>
+            <input type="text" class="form-control" id="txt1" value="<%=data.mb_addr1%>" readonly>
+          </div>
+          <div class="form-group">
+            <label for="txt1">상세주소</label>
+            <input type="text" class="form-control" id="txt1"  value="<%=data.mb_addr2%>" readonly>
+          </div>
+
+          <div class="form-row">
+            <div class="form-group col-md-4">
+              <label for="txt1">요청일자</label>
+              <input type="text" class="form-control" id="txt1" value="<%=moments(data.req_dt).format('YYYY-MM-DD HH:mm:ss')%>" readonly>
+            </div>
+            <div class="form-group col-md-4">
+              <label for="txt1">처리일자</label>
+              <input type="text" class="form-control" id="txt1" value="<%=moments(data.admin_confirm_dt).format('YYYY-MM-DD HH:mm:ss')%>" readonly>
+            </div>
+            <div class="form-group col-md-4">
+              <label for="txt1">상태</label>
+              <select id="selStatus" class="form-control">
+                <option value="Y" <%= (data.admin_confirm == 'Y' ? "selected" : "") %>>인증</option>
+                <option value="N" <%= (data.admin_confirm == 'N' ? "selected" : "") %>>미인증</option>
+                <option value="R" <%= (data.admin_confirm == 'R' ? "selected" : "") %>>거부</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="txt1">관리자 메모</label>
+            <textarea class="form-control" id="txtMemo" rows="5"><%=data.admin_memo%></textarea>
+          </div>
+
+          <div class="form-group">
+            <label for="txt1" id="lbelImg1" style="cursor: pointer;">이미지1</label>
+            <div id="divImg1" style="display:none;">
+              <img id="img1" src="<%=imgUrl%><%=data.mb_prove_file1%>" class="img-fluid" alt="Responsive image">
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="txt1" id="lbelImg2" style="cursor: pointer;">이미지2</label>
+            <div id="divImg2" style="display:none;">
+              <img id="img2" src="<%=imgUrl%><%=data.mb_prove_file2%>" class="img-fluid" alt="Responsive image">
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <div class="col-md-12" style="margin: 1em 1em 0 0; text-align: right;">
+    <button type="button" class="btn btn-warning" id="btnSubmit">저장</button>
+    <a href="/secondAuth/list/<%=status%>/<%=email%>/<%=sdate%>/<%=edate%>" class="btn btn-primary">목록</a>
+  </div>
+</div>
+<input type="hidden" id="hidNo" value="<%=no%>">
+<%- include('../bottom'); -%>

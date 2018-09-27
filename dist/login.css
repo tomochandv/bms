@@ -1,0 +1,299 @@
+html,
+body {
+  height: 100%;
+}
+
+body {
+  display: -ms-flexbox;
+  display: -webkit-box;
+  display: flex;
+  -ms-flex-align: center;
+  -ms-flex-pack: center;
+  -webkit-box-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  justify-content: center;
+  padding-top: 40px;
+  padding-bottom: 40px;
+  background-color: #f5f5f5;
+}
+
+.form-signin {
+  width: 330px;
+  /* max-width: 330px; */
+  padding: 15px;
+  margin: 0 auto;
+  /* border: 1px solid red; */
+}
+.form-signin .checkbox {
+  font-weight: 400;
+}
+.form-signin .form-control {
+  position: relative;
+  box-sizing: border-box;
+  height: auto;
+  padding: 10px;
+  font-size: 16px;
+}
+.form-signin .form-control:focus {
+  z-index: 2;
+}
+.form-signin input[type="email"] {
+  margin-bottom: -1px;
+  border-bottom-right-radius: 0;
+  border-bottom-left-radius: 0;
+}
+.form-signin input[type="password"] {
+  margin-bottom: 10px;
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+}
+
+.cssload-jar {
+	position: relative;
+	width: 195px;
+	margin: 49px auto 0;
+	text-align: center;
+}
+.cssload-jar .cssload-mouth {
+	width: 39px;
+	height: 10px;
+	margin: 0 auto -1px;
+	border-right: 4px solid rgb(0,0,0);
+	border-left: 4px solid rgb(0,0,0);
+	border-radius: 19px;
+		-o-border-radius: 19px;
+		-ms-border-radius: 19px;
+		-webkit-border-radius: 19px;
+		-moz-border-radius: 19px;
+}
+.cssload-jar .cssload-neck {
+	width: 34px;
+	height: 46px;
+	margin: 0 auto -7px;
+	z-index: 7;
+	position: relative;
+	background-color: rgb(255,255,255);
+	border-right: 4px solid rgb(0,0,0);
+	border-left: 4px solid rgb(0,0,0);
+}
+.cssload-jar .cssload-bubble {
+	width: 10px;
+	height: 10px;
+	position: absolute;
+	background-color: rgb(53,238,251);
+	opacity: 0.4;
+	left: 90px;
+	z-index: 8;
+	top: 107px;
+	border-radius: 100%;
+		-o-border-radius: 100%;
+		-ms-border-radius: 100%;
+		-webkit-border-radius: 100%;
+		-moz-border-radius: 100%;
+	animation: cssload-buble 2.3s linear 1.15s infinite;
+		-o-animation: cssload-buble 2.3s linear 1.15s infinite;
+		-ms-animation: cssload-buble 2.3s linear 1.15s infinite;
+		-webkit-animation: cssload-buble 2.3s linear 1.15s infinite;
+		-moz-animation: cssload-buble 2.3s linear 1.15s infinite;
+}
+.cssload-jar .cssload-bubble + .cssload-bubble {
+	left: 85px;
+	top: 117px;
+	width: 15px;
+	height: 15px;
+	animation-duration: 3.45s;
+		-o-animation-duration: 3.45s;
+		-ms-animation-duration: 3.45s;
+		-webkit-animation-duration: 3.45s;
+		-moz-animation-duration: 3.45s;
+}
+.cssload-jar .cssload-base {
+	margin: auto;
+	width: 117px;
+	height: 97px;
+	border: 4px solid rgb(0,0,0);
+	border-radius: 50%;
+		-o-border-radius: 50%;
+		-ms-border-radius: 50%;
+		-webkit-border-radius: 50%;
+		-moz-border-radius: 50%;
+	overflow: hidden;
+	position: relative;
+	z-index: 5;
+}
+.cssload-jar .cssload-base .cssload-bubble {
+	left: 15px;
+	top: 49px;
+	animation: cssload-bounce 2.65s linear 0s infinite alternate;
+		-o-animation: cssload-bounce 2.65s linear 0s infinite alternate;
+		-ms-animation: cssload-bounce 2.65s linear 0s infinite alternate;
+		-webkit-animation: cssload-bounce 2.65s linear 0s infinite alternate;
+		-moz-animation: cssload-bounce 2.65s linear 0s infinite alternate;
+}
+.cssload-jar .cssload-base .cssload-bubble + .cssload-bubble {
+	left: 73px;
+	top: 39px;
+	animation-duration: 3.45s;
+		-o-animation-duration: 3.45s;
+		-ms-animation-duration: 3.45s;
+		-webkit-animation-duration: 3.45s;
+		-moz-animation-duration: 3.45s;
+}
+.cssload-jar .cssload-liquid {
+	height: 39px;
+	background-color: rgb(53,238,251);
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	right: 0;
+}
+.cssload-jar .cssload-wave {
+	width: 58px;
+	height: 19px;
+	position: absolute;
+	background-color: rgb(53,238,251);
+	left: 0;
+	top: 56px;
+	animation: cssload-wave 1.15s linear 1.15s infinite alternate;
+		-o-animation: cssload-wave 1.15s linear 1.15s infinite alternate;
+		-ms-animation: cssload-wave 1.15s linear 1.15s infinite alternate;
+		-webkit-animation: cssload-wave 1.15s linear 1.15s infinite alternate;
+		-moz-animation: cssload-wave 1.15s linear 1.15s infinite alternate;
+	border-radius: 50%;
+		-o-border-radius: 50%;
+		-ms-border-radius: 50%;
+		-webkit-border-radius: 50%;
+		-moz-border-radius: 50%;
+}
+.cssload-jar .cssload-wave + .cssload-wave {
+	left: auto;
+	right: 0;
+}
+
+
+.cssload-loader {
+	width: 244px;
+	height: 49px;
+	line-height: 49px;
+	text-align: center;
+	position: absolute;
+	left: 50%;
+	transform: translate(-50%, -50%);
+		-o-transform: translate(-50%, -50%);
+		-ms-transform: translate(-50%, -50%);
+		-webkit-transform: translate(-50%, -50%);
+		-moz-transform: translate(-50%, -50%);
+	font-family: helvetica, arial, sans-serif;
+	text-transform: uppercase;
+	font-weight: 900;
+	font-size:18px;
+	color: rgb(206,66,51);
+	letter-spacing: 0.2em;
+}
+.cssload-loader::before, .cssload-loader::after {
+	content: "";
+	display: block;
+	width: 15px;
+	height: 15px;
+	background: rgb(206,66,51);
+	position: absolute;
+	animation: cssload-load 0.81s infinite alternate ease-in-out;
+		-o-animation: cssload-load 0.81s infinite alternate ease-in-out;
+		-ms-animation: cssload-load 0.81s infinite alternate ease-in-out;
+		-webkit-animation: cssload-load 0.81s infinite alternate ease-in-out;
+		-moz-animation: cssload-load 0.81s infinite alternate ease-in-out;
+}
+.cssload-loader::before {
+	top: 0;
+}
+.cssload-loader::after {
+	bottom: 0;
+}
+
+
+
+@keyframes cssload-load {
+	0% {
+		left: 0;
+		height: 29px;
+		width: 15px;
+	}
+	50% {
+		height: 8px;
+		width: 39px;
+	}
+	100% {
+		left: 229px;
+		height: 29px;
+		width: 15px;
+	}
+}
+
+@-o-keyframes cssload-load {
+	0% {
+		left: 0;
+		height: 29px;
+		width: 15px;
+	}
+	50% {
+		height: 8px;
+		width: 39px;
+	}
+	100% {
+		left: 229px;
+		height: 29px;
+		width: 15px;
+	}
+}
+
+@-ms-keyframes cssload-load {
+	0% {
+		left: 0;
+		height: 29px;
+		width: 15px;
+	}
+	50% {
+		height: 8px;
+		width: 39px;
+	}
+	100% {
+		left: 229px;
+		height: 29px;
+		width: 15px;
+	}
+}
+
+@-webkit-keyframes cssload-load {
+	0% {
+		left: 0;
+		height: 29px;
+		width: 15px;
+	}
+	50% {
+		height: 8px;
+		width: 39px;
+	}
+	100% {
+		left: 229px;
+		height: 29px;
+		width: 15px;
+	}
+}
+
+@-moz-keyframes cssload-load {
+	0% {
+		left: 0;
+		height: 29px;
+		width: 15px;
+	}
+	50% {
+		height: 8px;
+		width: 39px;
+	}
+	100% {
+		left: 229px;
+		height: 29px;
+		width: 15px;
+	}
+}

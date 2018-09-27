@@ -1,0 +1,126 @@
+<%- include('../header'); -%>
+<div class="row">
+  <div class="col-md-12">
+    <div class="alert alert-warning alert-dismissible fade show" role="alert" style="display: none;">
+      <strong>Holy guacamole!</strong> 모든 항목을 입력하세요.
+    </div>
+  </div>
+  <div class="col-md-12" style="margin-top: 2em; text-align: right;">
+      <button type="button" class="btn btn-primary" id="btnUserAdd">사용자 추가</button>
+      <button type="button" class="btn btn-warning" id="btnTele">텔레그램 싱크</button>
+  </div>
+
+  <div class="col-md-12" style="margin: 1em 1em 0 0; display: none;" id="divAdd">
+    <div class="card">
+      <div class="card-header">
+        사용자 추가
+      </div>
+      <div class="card-body">
+        <form onsubmit="return false;">
+          <div class="form-row">
+            <div class="form-group col-md-6">
+              <label for="txtId">아이디</label>
+              <input type="text" class="form-control" id="txtId" placeholder="User ID">
+            </div>
+            <div class="form-group col-md-6">
+              <label for="txtName">이름</label>
+              <input type="text" class="form-control" id="txtName" placeholder="Name">
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="form-group col-md-6">
+              <label for="txtEmail">이메일</label>
+              <input type="email" class="form-control" id="txtEmail" placeholder="Email">
+            </div>
+            <div class="form-group col-md-6">
+              <label for="txtPwd">비밀번호</label>
+              <input type="password" class="form-control" id="txtPwd" placeholder="Password">
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="form-group col-md-4">
+              <label for="inputState">Grade</label>
+              <select id="selGrades" class="form-control">
+                <option value="N">사용자</option>
+                <option value="S">관리자</option>
+              </select>
+            </div>
+            <div class="form-group col-md-6">
+              <label for="inputState">텔레그램 아이디</label>
+              <input type="text" class="form-control" id="txtTele" placeholder="Telegram Id">
+            </div>
+          </div>
+          <button type="button" class="btn btn-primary" id="btnSave">저장</button>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <div class="col-md-12" style="margin-top: 0.5em;">
+    <table class="table table-bordered">
+      <thead>
+        <tr>
+          <th scope="col" style="text-align: center; width: 5%;">#</th>
+          <th scope="col" style="text-align: center; width: 20%;">아이디</th>
+          <th scope="col" style="text-align: center; width: 20;">이름</th>
+          <th scope="col" style="text-align: center; width: 15;">텔레그램 아이디</th>
+          <th scope="col" style="text-align: center; width: 15;">텔레그램 코드</th>
+          <th scope="col" style="text-align: center; width: auto%;">이메일</th>
+          <th scope="col" style="text-align: center; width: 15%;">등급</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% data.forEach(function(data) { %>
+        <tr>
+          <td><%=data.idx%></td>
+          <td data-id="<%=data.idx%>"><a href="#"><%=data.userid%></a></td>
+          <td><%=data.name%></td>
+          <td><%=data.tele_name%></td>
+          <td><%=data.tele_id%></td>
+          <td><%=data.email%></td>
+          <td>
+            <select class="form-control" name="selGrade" data-id="<%=data.idx%>">
+              <option value="N" <% if(data.admin_grade == 'N') { %>selected<% } %> >사용자</option>
+              <option value="S" <% if(data.admin_grade == 'S') { %>selected<% } %> >관리자</option>
+              <option value="O" <% if(data.admin_grade == 'O') { %>selected<% } %> >사용정지</option>
+            </select>
+          </td>
+        </tr>
+        <% }) %>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+
+<div class="modal fade" id="modalPwd" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLongTitle">Modal title</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <form>
+          <div class="form-group">
+            <label for="exampleInputPassword1">비밀번호</label>
+            <input type="password" class="form-control" id="pass1" placeholder="Password">
+          </div>
+          <div class="form-group">
+            <label for="exampleInputPassword1">비밀번호 확인</label>
+            <input type="password" class="form-control" id="pass2" placeholder="Password">
+          </div>
+          <input type="hidden" id="hiidIdx">
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary" id="btnPwdChanged">저장</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<%- include('../bottom'); -%>

@@ -1,0 +1,74 @@
+<%- include('../header'); -%>
+
+<div class="row">
+  <div class="col-md-12" style="padding: 0;">
+    <div class="alert alert-dark" role="alert" style="width:100%;">
+      일대일 문의 / 리스트
+    </div>
+  </div>
+  <div class="col-md-12 bg-info text-white" style="padding: 1em 1em 1em 1em;">
+    <button type="button" class="btn btn-danger">
+      미답변 게시물 <span class="badge badge-light" id="badgeCount1">0</span>
+    </button>
+    <button type="button" class="btn btn-warning">
+      총 게시물 <span class="badge badge-light" id="badgeCount2">0</span>
+    </button>
+    <form>
+      <div class="form-row align-items-center">
+          <div class="col-sm-1 my-1">
+            <label class="sr-only" for="inlineFormInputName">선택</label>
+            <select class="form-control" id="selisComplete">
+              <option value="" <%= status === 'FF' ? 'selected' : '' %>>== 전체 ==</option>
+              <option value="Y" <%= status === 'Y' ? 'selected' : '' %>>응답</option>
+              <option value="N" <%= status === 'N' ? 'selected' : '' %>>미응답</option>
+            </select>
+          </div>
+        <div class="col-sm-3 my-1">
+          <label class="sr-only" for="txtEmail">Name</label>
+          <input type="text" class="form-control" id="txtEmail" placeholder="이름 또는 이메일 또는 회원번호" value="<%=email%>">
+        </div>
+        <div class="col-sm-2 my-1">
+          <label class="sr-only" for="txtSdate">Name</label>
+          <input type="date" class="form-control" id="txtSdate" placeholder="시작일" value="<%=sdate%>">
+        </div>
+        <div class="col-sm-2 my-1">
+          <label class="sr-only" for="txtEdate">Name</label>
+          <input type="date" class="form-control" id="txtEdate" placeholder="종료일" value="<%=edate%>">
+        </div>
+        <div class="col-auto my-1">
+          <button type="button" class="btn btn-light" id="btnSearch">Search</button>
+        </div>
+      </div>
+    </form>
+  </div>
+  <div class="col-md-12" style="margin-top: 2em;">
+    <form>
+      <div class="form-row align-items-center">
+        <div class="col-sm-1 my-1">
+          <label class="sr-only" for="inlineFormInputName">선택</label>
+          <select class="form-control" id="selRows">
+          </select>
+        </div>
+      </div>
+    </form>
+
+    <table class="table table-bordered">
+      <thead>
+        <tr>
+          <th scope="col" style="text-align: center; width: 3%;">번호</th>
+          <th scope="col" style="text-align: center; width: 5%;">카테고리</th>
+          <th scope="col" style="text-align: center; width: auto;">내용</th>
+          <th scope="col" style="text-align: center; width: 5%;">회원번호</th>
+          <th scope="col" style="text-align: center; width: 10%;">이메일</th>
+          <th scope="col" style="text-align: center; width: 15%;">[회원번호]이름</th>
+          <th scope="col" style="text-align: center; width: 10%;">날짜</th>
+          <th scope="col" style="text-align: center; width: 5%;">상태</th>
+          <th scope="col" style="text-align: center; width: 5%;">게시물수</th>
+        </tr>
+      </thead>
+      <tbody>
+      </tbody>
+    </table>
+  </div>
+</div>
+<%- include('../bottom'); -%>

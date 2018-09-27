@@ -1,0 +1,39 @@
+<%- include('../header'); -%>
+<div class="row">
+  <div class="col-md-12" style="padding: 0;">
+    <div class="alert alert-dark" role="alert" style="width:100%;">
+      일대일 문의 / 상세
+    </div>
+  </div>
+
+  <% data.forEach(function(data) { %>
+    <div class="col-md-12" style="margin: 1em 1em 0 0;">
+        <div class="card">
+          <div class="card-header <% if(data.b_type == 'Q'){%> bg-warning <%} else { %> bg-info <%}%>">
+            <p>이름 : <%=data.name%> (회원번호 : <%=data.mb_no%>)  </p>
+          </div>
+          <div class="card-body">
+            <h5 class="card-title"><%= moments(data.reg_date).format('YYYY-MM-DD HH:mm:ss')%></h5>
+            <p class="card-text"><%=data.content%></p>
+          </div>
+        </div>
+      </div>
+  <% }); %>
+
+  <div class="col-md-12" style="margin: 1em 1em 0 0;">
+    <div class="card">
+      <div class="card-header">
+        답변달기
+      </div>
+      <div class="card-body">
+        <textarea class="form-control" rows="4" id="txtResponse"></textarea> <br>
+        <button type="button" class="btn btn-default" id="btnWrite">등록</button>
+      </div>
+    </div>
+  </div>
+  <div class="col-md-12" style="margin: 1em 1em 0 0; text-align: right;">
+    <a href="/qa/list/<%=status%>/<%=email%>/<%=sdate%>/<%=edate%>" class="btn btn-primary">목록</a>
+  </div>
+</div>
+<input type="hidden" id="hidNo" value="<%=no%>">
+<%- include('../bottom'); -%>
